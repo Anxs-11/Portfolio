@@ -57,9 +57,26 @@ section {
   font-weight: 500;
   margin-top: 20px;
   padding: 10px 30px;
+  transition: all 0.5s ease-out;
+}
+.btn:hover {
+  background: #fff;
+  color: rgb(7, 7, 7);
+  transition: all 0.5s ease-out;
 }
 .textBx {
   z-index: 2;
+  animation: slide_me 1s;
+}
+@keyframes slide_me {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 header {
   position: fixed;
@@ -189,6 +206,10 @@ header.sticky ul li a {
   padding: 10px 0;
 }
 
+.skilllink {
+  text-decoration: none;
+  color: #222;
+}
 /* Projects */
 .projects .content {
   display: flex;
@@ -203,6 +224,31 @@ header.sticky ul li a {
 
 .projects .content .projectBx img {
   max-width: 100%;
+}
+.projectBx img {
+  width: 100%;
+  height: 40vw;
+  padding: 20px;
+  border: 5px solid rgb(45, 45, 45);
+  transition: all 1s ease-out;
+}
+.projectBx a {
+  text-decoration: none;
+}
+.projectBx h3 {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #111;
+}
+.projectBx h3:hover {
+  color: #0065b8;
+  text-decoration: underline;
+}
+.heading a:hover {
+  text-decoration: underline;
+  background: #2196f3;
+  font-size: 1.2em;
 }
 
 /* contact page */
@@ -304,14 +350,16 @@ header.sticky ul li a {
     /* transition: 0.5s; */
     z-index: 999;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-out;
   }
   .menu.active {
     left: 0;
+    transition: all 0.5s ease-out;
   }
-  header .menu li a {
+  header .menu.active li a {
     color: #111;
     line-height: 4;
-    transition: 1s;
+    transition: all 1s ease-out;
   }
   .toggle {
     width: 40px;
@@ -321,8 +369,12 @@ header.sticky ul li a {
     background-repeat: no-repeat;
     background-size: 30px;
     cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 1s;
   }
   .toggle.active {
+    transform: rotate(180deg);
+    transition: all 1s;
     background: url(close.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -373,6 +425,21 @@ header.sticky ul li a {
   .projects .content .projectBx {
     width: 100%;
     padding: 10px;
+  }
+  .projectBx img {
+    max-width: 100%;
+    /* max-height: 400px; */
+    width: 100%;
+    height: 50vw;
+    padding: 20px;
+    border: 5px solid rgb(45, 45, 45);
+    transition: all 1s ease-out;
+  }
+  .projectBx h3 {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 800;
+    color: #111;
   }
   .contactInfo {
     margin: 20px 0;
